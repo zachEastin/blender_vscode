@@ -134,6 +134,11 @@ async function tryFindActualAddonFolder(root: string) {
 }
 
 async function folderContainsAddonEntry(folderPath: string) {
+    let manifestPath = path.join(folderPath, "blender_manifest.toml");
+    if (await pathExists(manifestPath)) {
+        return true;
+    }
+        
     let initPath = path.join(folderPath, '__init__.py');
     try {
         let content = await readTextFile(initPath);
