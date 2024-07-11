@@ -79,7 +79,8 @@ def update_version_from_init(directory):
     bl_info_pattern = re.compile(r'bl_info\s*=\s*({.*?})', re.DOTALL)
     match = bl_info_pattern.search(init_content)
     if not match:
-        raise ValueError("bl_info dictionary not found in __init__.py")
+        print("bl_info dictionary not found in __init__.py")
+        return
     
     bl_info_str = match.group(1)
     bl_info_dict = eval(bl_info_str)  # Be careful with eval, ensure the source is trusted
