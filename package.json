@@ -185,6 +185,16 @@
             ],
             "description": "Name or the symlink that is created in Blenders addon folder."
           },
+          
+          "blender.addon.repoName": {
+            "type": "string",
+            "scope": "resource",
+            "default": "user_default",
+            "examples": [
+              "user_default"
+            ],
+            "description": "Name of the Repo"
+          },
           "blender.core.buildDebugCommand": {
             "type": "string",
             "scope": "resource",
